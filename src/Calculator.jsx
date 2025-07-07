@@ -17,8 +17,17 @@ export default function Calculator(){
         
 
         if(char === '='){
-            const res = evaluate(exp);
-            setValue({value: res, isSet:true});
+            if(exp.length == 0 ){
+                setValue({value: "Error", isSet:true});
+            }else{
+                try {
+                    const res = evaluate(exp);
+                    setValue({value: res, isSet:true});
+                } catch (error) {
+                    setValue({value: "Error", isSet:true});
+                }   
+            }
+            
         }else if(char === 'C'){
             setExp("")
             setValue({value:"",isSet:false})

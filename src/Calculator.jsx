@@ -17,7 +17,7 @@ export default function Calculator(){
         
 
         if(char === '='){
-            if(exp.length == 0 ){
+            if(exp.length === 0 ){
                 setValue({value: "Error", isSet:true});
             }else{
                 try {
